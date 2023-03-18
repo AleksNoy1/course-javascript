@@ -140,10 +140,14 @@ function calculator(number = 0) {
       return args.reduce((all, current) => all - current, number)
     },
     div(...args) {
-      if (args.some(a => a === 0)) {
-        throw new Error('division by 0');
-      }
-      return args.reduce((all, current) => all / current, number)
+      // if (args.some(a => a === 0)) {
+      //   
+      // }
+      return args.reduce((all, current) => { 
+        current !== 0 ? (all / current, number) : (function(){throw new Error('division by 0')}());
+      
+      })
+      
     },
     mul(...args) {
       return args.reduce((all, current) => all * current, number)
