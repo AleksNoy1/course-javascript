@@ -1,5 +1,5 @@
 const APP_ID = 51597333;
-const FRIENDS_PERMISSION = 3;
+const FRIENDS_PERMISSION = 2;
 const PHOTO_PERMISSION = 4;
 
 export default {
@@ -7,7 +7,7 @@ export default {
     if (!array.length) {
       return null;}
 
-    const index = Math.round (x = Math.random() * (array.length - 1));  
+    const index = Math.round (Math.random() * (array.length - 1));  
   
     return array[index];
   },
