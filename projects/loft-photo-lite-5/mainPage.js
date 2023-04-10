@@ -1,7 +1,7 @@
 import model from './model';
 import profilePage from './profilePage';
 import pages from './pages';
-import commentsTemplate from './commentsTemplate.html.hbs';
+import commentsTemplate from './commentsTemplate.hbs';
 
 export default {
   async getNextPhoto() {
@@ -9,13 +9,12 @@ export default {
     const photoStats = await model.photoStats(id);
     this.setFriendAndPhoto(friend, id, url, photoStats);
   },
-
+  
   setFriendAndPhoto(friend, id, url, stats) {
     const photoComp = document.querySelector('.component-photo');
     const headerPhotoComp = document.querySelector('.component-header-photo');
     const headerNameComp = document.querySelector('.component-header-name');
     const footerPhotoComp = document.querySelector('.component-footer-photo');
-
     this.friend = friend;
     this.photoId = id;
 
@@ -97,12 +96,12 @@ export default {
           name: `${comment.user.first_name ?? ''} ${comment.user.last_name ?? ''}`,
           photo: comment.user.photo_50,
           text: comment.text,
-        };
+        }; 
       }),
     });
 
     document.querySelector('.component-comments-container-list').innerHTML = '';
-    document.querySelector('.component-comments-container-list').append(commentsElement);
+    document.querySelector('.component-comments-container-list').innerHTML= commentsElement
     this.setComments(comments.length);
   },
 

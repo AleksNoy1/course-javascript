@@ -46,7 +46,7 @@ const methods = {
             DB.comments.set(photoId, photoComments);
         }
 
-        photoComments.unshift({user: vkUser, test: body.text});
+        photoComments.unshift({user: vkUser, text: body.text});
     },
     getComments(req, res, url) {
         const photoId = url.searchParams.get('photo');
